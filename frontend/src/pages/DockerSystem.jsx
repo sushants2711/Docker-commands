@@ -1,8 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Server, Activity, Database, Power } from 'lucide-react';
+import { Activity, Database, Power } from 'lucide-react';
 
 const DockerSystem = () => {
   return (

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Code2, Server, Database, Cloud, PlayCircle, Globe, Map, Sparkles, ChevronRight } from 'lucide-react';
+import { Code2, Globe, Map, Sparkles, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TypewriterText = ({ text }) => {

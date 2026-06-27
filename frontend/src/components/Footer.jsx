@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 
 const InstagramIcon = ({ size = 16, className = "" }) => (
