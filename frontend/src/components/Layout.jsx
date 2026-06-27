@@ -42,7 +42,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 dark:bg-slate-950 font-sans selection:bg-blue-200 dark:selection:bg-blue-900 relative overflow-hidden">
+    <div className="flex h-[100dvh] md:h-screen bg-slate-50 dark:bg-slate-950 font-sans selection:bg-blue-200 dark:selection:bg-blue-900 relative overflow-hidden">
       <Sidebar isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
       
       <main ref={mainRef} className="flex-1 overflow-y-auto relative flex flex-col w-full">

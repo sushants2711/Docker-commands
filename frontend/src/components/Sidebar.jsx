@@ -79,7 +79,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       {/* Sidebar Container */}
       <aside 
         className={cn(
-          "w-72 flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-screen fixed md:relative z-50 transition-transform duration-300 ease-in-out shrink-0",
+          "w-72 flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-[100dvh] md:h-screen fixed top-0 left-0 md:relative z-50 transition-transform duration-300 ease-in-out shrink-0",
           isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         )}
       >
@@ -101,7 +101,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </button>
         </div>
 
-      <nav className="p-4 space-y-8 overflow-y-auto flex-1">
+      <nav className="p-4 space-y-8 overflow-y-auto flex-1 pb-24 md:pb-4">
         {navItems.map((section, idx) => (
           <div key={idx}>
             <h3 className="px-3 text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">

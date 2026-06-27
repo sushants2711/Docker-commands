@@ -10,7 +10,7 @@ const Introduction = () => {
       className="max-w-4xl space-y-8 pb-12"
     >
       <div className="border-b border-slate-200 dark:border-slate-800 pb-6">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+        <h1 className="text-4xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
           What is Docker?
         </h1>
         <div className="space-y-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">

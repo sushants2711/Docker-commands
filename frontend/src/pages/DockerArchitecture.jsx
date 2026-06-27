@@ -10,7 +10,7 @@ const DockerArchitecture = () => {
       className="max-w-5xl space-y-12 pb-12"
     >
       <div className="border-b border-slate-200 dark:border-slate-800 pb-6">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+        <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4">
           Inside Docker
         </h1>
         <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">

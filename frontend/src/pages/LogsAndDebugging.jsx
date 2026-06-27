@@ -13,8 +13,8 @@ const LogsAndDebugging = () => {
       className="max-w-5xl space-y-12 pb-16 mx-auto"
     >
       <div className="border-b border-slate-200 dark:border-slate-800 pb-6 text-center md:text-left">
-        <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white mb-4">
-          Docker <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">Logs & Debugging</span>
+        <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mb-4">
+          Docker Logs & Debugging
         </h1>
         <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
           When things break, you need to see what happened. Logs are the window into the soul of your container.
