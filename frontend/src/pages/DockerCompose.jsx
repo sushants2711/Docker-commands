@@ -92,6 +92,74 @@ networks:
         </div>
       </section>
 
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Full Stack Visualization</h2>
+        <p className="text-slate-600 dark:text-slate-400">
+          This is what a typical modern web application architecture looks like when orchestrated by Docker Compose. All three containers are running on a single machine, communicating securely via an internal network.
+        </p>
+
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-8 mt-4 overflow-hidden">
+          
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 relative w-full py-8">
+            
+            {/* The Docker Network Background (Decorative) */}
+            <div className="absolute inset-0 bg-indigo-50 dark:bg-indigo-900/10 rounded-3xl border-2 border-indigo-100 dark:border-indigo-800/30 z-0">
+               <div className="absolute top-2 left-4 text-xs font-bold text-indigo-400 uppercase tracking-widest">Internal Docker Network</div>
+            </div>
+
+            {/* React Frontend */}
+            <div className="bg-white dark:bg-slate-800 border-2 border-blue-400 rounded-xl p-6 flex flex-col items-center w-56 shadow-lg z-10">
+              <div className="text-4xl mb-2">⚛️</div>
+              <h4 className="font-bold text-slate-800 dark:text-slate-200">Frontend</h4>
+              <div className="mt-2 text-xs bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded text-slate-600 dark:text-slate-400 font-mono">React App</div>
+              <div className="mt-4 w-full bg-blue-100 dark:bg-blue-900/50 border border-blue-200 dark:border-blue-800 rounded p-2 text-center text-xs font-bold text-blue-700 dark:text-blue-300">
+                Port 3000
+              </div>
+            </div>
+
+            {/* HTTP Arrow */}
+            <div className="flex flex-col items-center z-10">
+               <span className="text-[10px] uppercase font-bold text-indigo-500 mb-1 hidden lg:block">HTTP Requests</span>
+               <div className="hidden lg:block text-indigo-400 text-2xl font-bold animate-pulse">⟷</div>
+               <div className="lg:hidden text-indigo-400 text-2xl font-bold animate-pulse rotate-90 my-2">⟷</div>
+            </div>
+
+            {/* Node Backend */}
+            <div className="bg-white dark:bg-slate-800 border-2 border-emerald-400 rounded-xl p-6 flex flex-col items-center w-56 shadow-lg z-10">
+              <div className="text-4xl mb-2 text-green-500">⬡</div>
+              <h4 className="font-bold text-slate-800 dark:text-slate-200">Backend API</h4>
+              <div className="mt-2 text-xs bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded text-slate-600 dark:text-slate-400 font-mono">Node.js / Express</div>
+              <div className="mt-4 w-full bg-emerald-100 dark:bg-emerald-900/50 border border-emerald-200 dark:border-emerald-800 rounded p-2 text-center text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                Port 7000
+              </div>
+            </div>
+
+            {/* DB Arrow */}
+            <div className="flex flex-col items-center z-10">
+               <span className="text-[10px] uppercase font-bold text-indigo-500 mb-1 hidden lg:block">TCP Connection</span>
+               <div className="hidden lg:block text-indigo-400 text-2xl font-bold animate-pulse">⟷</div>
+               <div className="lg:hidden text-indigo-400 text-2xl font-bold animate-pulse rotate-90 my-2">⟷</div>
+            </div>
+
+            {/* MongoDB */}
+            <div className="bg-white dark:bg-slate-800 border-2 border-orange-400 rounded-xl p-6 flex flex-col items-center w-56 shadow-lg z-10 relative">
+              <div className="text-4xl mb-2">🍃</div>
+              <h4 className="font-bold text-slate-800 dark:text-slate-200">Database</h4>
+              <div className="mt-2 text-xs bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded text-slate-600 dark:text-slate-400 font-mono">MongoDB</div>
+              <div className="mt-4 w-full bg-orange-100 dark:bg-orange-900/50 border border-orange-200 dark:border-orange-800 rounded p-2 text-center text-xs font-bold text-orange-700 dark:text-orange-300">
+                Port 27017
+              </div>
+              
+              {/* Volume Attached indicator */}
+              <div className="absolute -bottom-3 right-4 bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 text-yellow-800 dark:text-yellow-200 text-[10px] font-bold px-2 py-1 rounded-full shadow-md flex items-center gap-1 z-20">
+                <span>💾</span> Volume
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section className="space-y-8">
         <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100">The <code>docker-compose.yaml</code> File</h2>
 

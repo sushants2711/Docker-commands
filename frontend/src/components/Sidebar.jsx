@@ -3,7 +3,8 @@ import {
   BookOpen, Server, Box, Layers, Play,
   TerminalSquare, HardDrive, Network,
   Settings, FileCode2, Container, Wrench,
-  Apple, Monitor, Code, X, Cloud, Key, Plug
+  Apple, Monitor, Code, X, Cloud, Key, Plug, Shield, FileWarning,
+  ClipboardList
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -54,6 +55,9 @@ const navItems = [
   {
     group: 'Building & Orchestration', items: [
       { name: 'Dockerfile', path: '/docker/dockerfile', icon: FileCode2 },
+      { name: '.dockerignore', path: '/docker/dockerignore', icon: FileWarning },
+      { name: 'Multi-stage Builds', path: '/docker/multi-stage', icon: Layers },
+      { name: 'Environment Variables', path: '/docker/env-variables', icon: Shield },
       { name: 'Docker Compose', path: '/docker/docker-compose', icon: Container },
       { name: 'Compose Commands', path: '/docker/compose-commands', icon: Wrench },
     ]
@@ -62,6 +66,11 @@ const navItems = [
     group: 'Guides & Examples', items: [
       { name: 'Node.js App', path: '/docker/nodejs', icon: Code },
       { name: 'React.js App', path: '/docker/reactjs', icon: Code },
+    ]
+  },
+  {
+    group: 'Quick Reference', items: [
+      { name: 'Command Cheatsheet', path: '/docker/cheatsheet', icon: ClipboardList },
     ]
   },
 ];

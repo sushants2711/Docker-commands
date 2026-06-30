@@ -18,6 +18,10 @@ import DockerSystem from './pages/DockerSystem';
 import Dockerfile from './pages/Dockerfile';
 import DockerCompose from './pages/DockerCompose';
 import DockerComposeCommands from './pages/DockerComposeCommands';
+import EnvVariables from './pages/EnvVariables';
+import Dockerignore from './pages/Dockerignore';
+import MultiStageBuilds from './pages/MultiStageBuilds';
+import Cheatsheet from './pages/Cheatsheet';
 import InstallMac from './pages/InstallMac';
 import InstallLinux from './pages/InstallLinux';
 import InstallWindows from './pages/InstallWindows';
@@ -46,11 +50,15 @@ function App() {
             <Route path="management" element={<ManagementCommands />} />
             <Route path="system-management" element={<DockerSystem />} />
             <Route path="dockerfile" element={<Dockerfile />} />
+            <Route path="multi-stage" element={<MultiStageBuilds />} />
             <Route path="docker-compose" element={<DockerCompose />} />
             <Route path="compose-commands" element={<DockerComposeCommands />} />
+            <Route path="env-variables" element={<EnvVariables />} />
+            <Route path="dockerignore" element={<Dockerignore />} />
             <Route path="install-mac" element={<InstallMac />} />
             <Route path="install-linux" element={<InstallLinux />} />
             <Route path="install-windows" element={<InstallWindows />} />
+            <Route path="cheatsheet" element={<Cheatsheet />} />
             <Route path="hub" element={<DockerHub />} />
             <Route path="login" element={<DockerLogin />} />
             <Route path="nodejs" element={<DockerNodeJS />} />

@@ -52,8 +52,54 @@ const Volumes = () => {
 
       {/* Diagram Section */}
       <section className="space-y-6">
-        <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex justify-center">
-          <img src="/docker-volumes.png" alt="Docker Volumes Persistent Storage" className="max-w-full h-auto rounded-lg" />
+        <div className="mt-8 mb-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-8">
+          <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-8 text-center">How Volumes Protect Your Data</h3>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full text-center relative">
+            
+            {/* Host Machine Volume */}
+            <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6 flex flex-col items-center w-64 shadow-lg relative z-10">
+              <div className="absolute -top-3 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Host Machine
+              </div>
+              <div className="text-5xl mt-2 mb-2">📁</div>
+              <h4 className="font-bold text-slate-700 dark:text-slate-300">Docker Volume</h4>
+              <p className="text-xs text-slate-500 font-mono mt-1">/var/lib/docker/volumes/</p>
+              
+              <div className="mt-4 w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded p-2 text-sm text-emerald-600 dark:text-emerald-400 font-bold shadow-inner">
+                💾 Safe Data (Users, Posts)
+              </div>
+            </div>
+
+            {/* Sync Arrows */}
+            <div className="flex flex-col items-center justify-center text-blue-500 md:rotate-0 rotate-90 relative z-0">
+              <span className="text-xs font-bold uppercase tracking-widest text-slate-400 absolute -top-4 md:-top-6 w-32 text-center left-1/2 -translate-x-1/2">Mounted to</span>
+              <span className="text-3xl font-bold animate-pulse">⟷</span>
+            </div>
+
+            {/* Docker Container (Crashing) */}
+            <div className="bg-rose-50 dark:bg-rose-900/20 border-2 border-rose-200 dark:border-rose-800/50 rounded-xl p-6 flex flex-col items-center w-64 shadow-lg relative z-10 border-dashed">
+              <div className="absolute -top-3 bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-rose-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Docker Container
+              </div>
+              
+              <div className="text-5xl mt-2 mb-2 opacity-50 relative">
+                 🐳
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-rose-500 text-6xl font-bold">✕</div>
+              </div>
+              <h4 className="font-bold text-rose-600 dark:text-rose-400">Database Container</h4>
+              <p className="text-xs text-slate-500 font-mono mt-1">(Crashed / Deleted)</p>
+              
+              <div className="mt-4 w-full opacity-30 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded p-2 text-sm text-slate-400 font-bold line-through">
+                /var/lib/mysql
+              </div>
+            </div>
+
+          </div>
+          
+          <div className="mt-8 text-center text-slate-600 dark:text-slate-400 text-sm max-w-2xl mx-auto">
+            Even though the container is deleted or crashed, the data lives safely on the Host Machine. When you spin up a <strong>new</strong> container and mount this volume, it picks up right where it left off!
+          </div>
         </div>
       </section>
 

@@ -52,8 +52,45 @@ const Networks = () => {
 
       {/* Diagram Section */}
       <section className="space-y-6">
-        <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex justify-center">
-          <img src="/docker-networks.png" alt="Docker Networks Connecting Containers" className="max-w-full h-auto rounded-lg" />
+        <div className="mt-8 mb-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-8">
+          <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-8 text-center">How Containers Communicate</h3>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full text-center relative">
+            
+            {/* React Frontend Container */}
+            <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6 flex flex-col items-center w-56 shadow-lg relative z-10">
+              <div className="absolute -top-3 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                Container 1
+              </div>
+              <div className="text-5xl mt-2 mb-2">⚛️</div>
+              <h4 className="font-bold text-slate-700 dark:text-slate-300">Frontend App</h4>
+              <p className="text-xs text-slate-500 font-mono mt-1">Hostname: `react-app`</p>
+            </div>
+
+            {/* Network Bridge */}
+            <div className="flex flex-col items-center justify-center relative z-0 w-full md:w-auto my-6 md:my-0">
+              <div className="absolute w-1 h-24 md:w-32 md:h-1 bg-purple-400 dark:bg-purple-600 rounded"></div>
+              <div className="bg-purple-100 dark:bg-purple-900/80 border-2 border-purple-400 dark:border-purple-500 rounded-full py-2 px-4 shadow-md relative z-10 text-purple-800 dark:text-purple-200 font-bold text-sm">
+                Docker Network
+                <div className="text-[10px] opacity-75 font-mono">my-secure-net</div>
+              </div>
+            </div>
+
+            {/* Node Backend Container */}
+            <div className="bg-emerald-50 dark:bg-emerald-900/30 border-2 border-emerald-200 dark:border-emerald-800 rounded-xl p-6 flex flex-col items-center w-56 shadow-lg relative z-10">
+              <div className="absolute -top-3 bg-emerald-100 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                Container 2
+              </div>
+              <div className="text-5xl mt-2 mb-2 text-green-500">⬡</div>
+              <h4 className="font-bold text-slate-700 dark:text-slate-300">Backend API</h4>
+              <p className="text-xs text-slate-500 font-mono mt-1">Hostname: `node-api`</p>
+            </div>
+
+          </div>
+          
+          <div className="mt-8 text-center text-slate-600 dark:text-slate-400 text-sm max-w-2xl mx-auto">
+            Instead of using IP addresses, the <strong>Frontend App</strong> can securely send requests to the <strong>Backend API</strong> simply by sending HTTP requests to <code>http://node-api:3000</code>. Docker's internal DNS handles the routing automatically!
+          </div>
         </div>
       </section>
 
