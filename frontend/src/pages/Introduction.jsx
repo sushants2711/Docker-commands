@@ -93,6 +93,7 @@ const Introduction = () => {
           <ul className="list-disc pl-5 space-y-2 mt-4 text-slate-600 dark:text-slate-400">
             <li><strong>Consistency:</strong> The exact same container runs on your laptop, the testing server, and the production cloud.</li>
             <li><strong>Isolation:</strong> Multiple apps can run on the same machine without their dependencies interfering with each other.</li>
+            <li><strong>Run Multiple Containers Effortlessly:</strong> You can spin up multiple containers (like a database, a backend API, and a frontend server) on the same machine instantly. They all run simultaneously in complete isolation, and you can easily access each one via mapped ports without any software conflicts.</li>
             <li><strong>Portability:</strong> You can move containers between AWS, Azure, Google Cloud, or a local server effortlessly.</li>
             <li><strong>Efficiency:</strong> Unlike Virtual Machines, containers share the host's OS kernel, meaning they boot instantly and use far fewer resources.</li>
           </ul>

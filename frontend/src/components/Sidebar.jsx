@@ -3,7 +3,7 @@ import {
   BookOpen, Server, Box, Layers, Play,
   TerminalSquare, HardDrive, Network,
   Settings, FileCode2, Container, Wrench,
-  Apple, Monitor, Code, X, Cloud, Key
+  Apple, Monitor, Code, X, Cloud, Key, Plug
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -35,6 +35,7 @@ const navItems = [
       { name: 'Containers', path: '/docker/containers', icon: Play },
       { name: 'Volumes', path: '/docker/volumes', icon: HardDrive },
       { name: 'Networks', path: '/docker/networks', icon: Network },
+      { name: 'Port Binding', path: '/docker/port-binding', icon: Plug },
     ]
   },
   {

@@ -12,6 +12,7 @@ import Containers from './pages/Containers';
 import LogsAndDebugging from './pages/LogsAndDebugging';
 import Volumes from './pages/Volumes';
 import Networks from './pages/Networks';
+import PortBinding from './pages/PortBinding';
 import ManagementCommands from './pages/ManagementCommands';
 import DockerSystem from './pages/DockerSystem';
 import Dockerfile from './pages/Dockerfile';
@@ -41,6 +42,7 @@ function App() {
             <Route path="logs-debugging" element={<LogsAndDebugging />} />
             <Route path="volumes" element={<Volumes />} />
             <Route path="networks" element={<Networks />} />
+            <Route path="port-binding" element={<PortBinding />} />
             <Route path="management" element={<ManagementCommands />} />
             <Route path="system-management" element={<DockerSystem />} />
             <Route path="dockerfile" element={<Dockerfile />} />
