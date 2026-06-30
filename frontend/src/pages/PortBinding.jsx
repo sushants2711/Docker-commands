@@ -161,6 +161,39 @@ docker run -p 8083:3000 my-backend-server`}
             </li>
           </ul>
         </div>
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 mt-6">
+          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">EXPOSE vs Port Binding</h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
+            It is important to understand the difference between the <code>EXPOSE</code> instruction in a Dockerfile and actual Port Binding (<code>-p</code>).
+          </p>
+          <ul className="list-disc pl-5 space-y-3 text-slate-600 dark:text-slate-400">
+            <li>
+              <strong>EXPOSE Instruction:</strong> Used inside the <code>Dockerfile</code> (e.g., <code>EXPOSE 80</code>). This is primarily for <strong>documentation</strong>. It tells Docker and other developers that the container is designed to listen on this specific internal port. Crucially, it does <em>not</em> publish the port to the outside world.
+            </li>
+            <li>
+              <strong>Port Binding (-p):</strong> This is used when running the container (e.g., <code>docker run -p 80:80</code>). This actually creates the active network bridge from your host machine (External) to the container (Internal).
+            </li>
+          </ul>
+          <div className="mt-4 bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border border-blue-100 dark:border-blue-800">
+            <h4 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Real World Example: Cloud Servers (EC2)</h4>
+            <p className="text-sm text-blue-700 dark:text-blue-400 mb-2">
+              If you run a frontend server (like Nginx) in a container on a cloud server like EC2, it typically listens internally on port 80. If you map it using <code>-p 5173:80</code>, users from the outside world must explicitly type the port: <code>http://&lt;your-server-ip&gt;:5173</code> in their browser.
+            </p>
+            <p className="text-sm text-blue-700 dark:text-blue-400">
+              If you want users to just type your IP address or domain name without adding a port (which defaults to HTTP port 80), you would map it directly using <code>-p 80:80</code>.
+            </p>
+          </div>
+
+          <div className="mt-4 bg-emerald-50 dark:bg-emerald-900/30 p-4 rounded-lg border border-emerald-100 dark:border-emerald-800">
+            <h4 className="font-bold text-emerald-800 dark:text-emerald-300 mb-2">Real World Example: Local Development</h4>
+            <p className="text-sm text-emerald-700 dark:text-emerald-400 mb-2">
+              During local development on your own laptop, "the outside world" is just your web browser. If you run a React/Vite development server inside a container that listens on its default port <code>5173</code>, you might map it using <code>-p 6000:5173</code>.
+            </p>
+            <p className="text-sm text-emerald-700 dark:text-emerald-400">
+              When you open <code>http://localhost:6000</code> in your browser, your local machine receives the request and immediately forwards it to the container's internal port <code>5173</code>. This means you are indirectly viewing the app running on 5173 through your localhost's port 6000.
+            </p>
+          </div>
+        </div>
       </section>
     </motion.div>
   );
