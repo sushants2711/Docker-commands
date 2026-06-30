@@ -29,6 +29,7 @@ import DockerNodeJS from './pages/DockerNodeJS';
 import DockerReactJS from './pages/DockerReactJS';
 import DockerHub from './pages/DockerHub';
 import DockerLogin from './pages/DockerLogin';
+import ComingSoon from './pages/ComingSoon';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Portfolio />} />
+          <Route path="sushant" element={<Portfolio />} />
+          
           <Route path="docker">
             <Route index element={<Introduction />} />
             <Route path="vm-vs-container" element={<VmVsContainer />} />
@@ -63,6 +66,23 @@ function App() {
             <Route path="login" element={<DockerLogin />} />
             <Route path="nodejs" element={<DockerNodeJS />} />
             <Route path="reactjs" element={<DockerReactJS />} />
+          </Route>
+
+          <Route path="aws">
+            <Route index element={<ComingSoon topic="AWS" />} />
+            <Route path="*" element={<ComingSoon topic="AWS" />} />
+          </Route>
+          <Route path="nginx">
+            <Route index element={<ComingSoon topic="Nginx" />} />
+            <Route path="*" element={<ComingSoon topic="Nginx" />} />
+          </Route>
+          <Route path="kubernetes">
+            <Route index element={<ComingSoon topic="Kubernetes" />} />
+            <Route path="*" element={<ComingSoon topic="Kubernetes" />} />
+          </Route>
+          <Route path="github-actions">
+            <Route index element={<ComingSoon topic="GitHub Actions" />} />
+            <Route path="*" element={<ComingSoon topic="GitHub Actions" />} />
           </Route>
         </Route>
       </Routes>
