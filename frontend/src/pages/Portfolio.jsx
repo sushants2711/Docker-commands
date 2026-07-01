@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Globe, Map, Sparkles, ChevronRight } from 'lucide-react';
+import { Code2, Globe, Map, Sparkles, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TypewriterText = ({ text }) => {
@@ -38,6 +38,7 @@ const TypewriterText = ({ text }) => {
 };
 
 const Portfolio = () => {
+  const [showOptions, setShowOptions] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -47,10 +48,12 @@ const Portfolio = () => {
       className="max-w-6xl space-y-12 pb-16"
     >
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center gap-12 bg-gradient-to-br from-black via-slate-900 to-black rounded-[2.5rem] p-8 md:p-14 border border-emerald-500/30 shadow-[0_0_50px_rgba(16,185,129,0.15)] overflow-hidden relative">
-        <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none text-9xl">👨‍💻</div>
-        <div className="absolute -left-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute right-10 bottom-10 w-48 h-48 bg-emerald-700/10 rounded-full blur-3xl"></div>
+      <section className="flex flex-col md:flex-row items-center gap-12 bg-gradient-to-br from-black via-slate-900 to-black rounded-[2.5rem] p-8 md:p-14 border border-emerald-500/30 shadow-[0_0_50px_rgba(16,185,129,0.15)] relative">
+        <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 p-8 opacity-5 text-9xl">👨‍💻</div>
+          <div className="absolute -left-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute right-10 bottom-10 w-48 h-48 bg-emerald-700/10 rounded-full blur-3xl"></div>
+        </div>
 
         <motion.div
           initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
@@ -84,11 +87,41 @@ const Portfolio = () => {
             I'm a working professional with a massive dream: <strong>to help people</strong>. I created this guide so you don't have to waste the countless hours I spent figuring it out. I'm always learning, having fun, and enhancing my coding skills every single day.
           </p>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block mt-4">
-            <Link to="/docker" className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-bold font-mono shadow-lg shadow-emerald-500/30 transition-all">
-              {">"} Start Learning Docker <ChevronRight size={20} />
-            </Link>
-          </motion.div>
+          <div className="relative inline-block mt-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowOptions(!showOptions)}
+              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-bold font-mono shadow-lg shadow-emerald-500/30 transition-all w-full justify-between"
+            >
+              <span className="flex items-center gap-2">{">"} Start Learning</span>
+              <ChevronDown size={20} className={`transform transition-transform ${showOptions ? 'rotate-180' : ''}`} />
+            </motion.button>
+
+            {showOptions && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute top-full left-0 mt-2 w-full bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden z-50 flex flex-col"
+              >
+                {[
+                  { name: 'Docker', path: '/docker', icon: '🐳' },
+                  { name: 'AWS', path: '/aws', icon: '☁️' },
+                  { name: 'Kubernetes', path: '/kubernetes', icon: '☸️' },
+                  { name: 'Nginx', path: '/nginx', icon: '🌐' },
+                  { name: 'GitHub Actions', path: '/github-actions', icon: '▶️' }
+                ].map(topic => (
+                  <Link
+                    key={topic.name}
+                    to={topic.path}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium transition-colors border-b border-slate-100 dark:border-slate-700/50 last:border-0"
+                  >
+                    <span className="text-xl">{topic.icon}</span> {topic.name}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
 
@@ -105,7 +138,7 @@ const Portfolio = () => {
               { title: "Chandigarh University", subtitle: "Higher Education", color: "bg-purple-500" },
               { title: "Trillium Flow Technologies", subtitle: "Software Developer", color: "bg-emerald-500" }
             ].map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +163,7 @@ const Portfolio = () => {
           </h2>
           <div className="space-y-4 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent dark:before:via-slate-700">
             {['HTML', 'CSS', 'Django', 'JavaScript', 'MERN Stack', 'Git', 'GitHub', 'CI/CD (GitHub Actions)', 'Prisma', 'Docker', 'AWS (EC2)'].map((skill, index) => (
-              <motion.div 
+              <motion.div
                 key={skill}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -172,7 +205,7 @@ const Portfolio = () => {
               'Travel the world as a digital nomad',
               'Build a community of passionate developers'
             ].map((goal, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
