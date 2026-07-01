@@ -4,7 +4,7 @@ import {
   TerminalSquare, HardDrive, Network,
   Settings, FileCode2, Container, Wrench,
   Apple, Monitor, Code, X, Cloud, Key, Plug, Shield, FileWarning,
-  ClipboardList, ChevronDown
+  ClipboardList, ChevronDown, HelpCircle
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -77,6 +77,11 @@ const topics = {
       {
         group: 'Quick Reference', items: [
           { name: 'Command Cheatsheet', path: '/docker/cheatsheet', icon: ClipboardList },
+        ]
+      },
+      {
+        group: 'Interview Prep', items: [
+          { name: 'Interview QA', path: '/docker/interview-qa', icon: HelpCircle },
         ]
       },
     ]

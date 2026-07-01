@@ -30,6 +30,7 @@ import DockerReactJS from './pages/DockerReactJS';
 import DockerHub from './pages/DockerHub';
 import DockerLogin from './pages/DockerLogin';
 import ComingSoon from './pages/ComingSoon';
+import InterviewQA from './pages/InterviewQA';
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
             <Route path="login" element={<DockerLogin />} />
             <Route path="nodejs" element={<DockerNodeJS />} />
             <Route path="reactjs" element={<DockerReactJS />} />
+            <Route path="interview-qa" element={<InterviewQA />} />
           </Route>
 
           <Route path="aws">
